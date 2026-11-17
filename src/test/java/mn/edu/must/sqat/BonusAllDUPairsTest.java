@@ -51,4 +51,11 @@ class BonusAllDUPairsTest {
         assertEquals(8, DataFlowTargets.bonus(
                 new int[]{1, 1, 1, 1, 1}, 5));
     }
+
+    @Test
+    @DisplayName("DU07: distinguish longest streak from total attendance")
+    void detectsIncorrectBestCalculation() {
+        assertEquals(0, DataFlowTargets.bonus(
+                new int[]{1, 1, 0, 1, 1, 1, 1}, 7));
+    }
 }
